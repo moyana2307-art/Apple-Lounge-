@@ -52,53 +52,62 @@ export default function Hero() {
             <span className="text-xs font-medium text-[#86868B] tracking-wide">Now in Victoria Falls</span>
           </motion.div>
 
-          {/* Headline */}
-          <motion.h1
-            variants={fadeUp}
-            style={{ y: textY, fontSize: 'clamp(2.8rem, 8vw, 7.5rem)' }}
-            className="font-bold tracking-[-0.04em] leading-[0.88] text-[#1d1d1f] mb-5"
-          >
-            iPhone 17
-            <br />
-            <span className="bg-gradient-to-r from-[#1d1d1f] via-[#424245] to-[#86868B] bg-clip-text text-transparent">
-              Pro Max
-            </span>
-          </motion.h1>
-
-          {/* Subtitle */}
-          <motion.p variants={fadeUp} className="text-lg md:text-xl text-[#86868B] font-normal max-w-md leading-relaxed mb-6">
-            The most powerful iPhone ever.<br className="hidden sm:block" /> Only at Apple Lounge.
-          </motion.p>
-
-          {/* CTAs */}
-          <motion.div variants={fadeUp} className="flex items-center gap-4 mb-14 md:mb-20">
-            <Link
-              href="/products?model=iPhone+17+Pro+Max"
-              className="inline-flex items-center justify-center bg-[#0071e3] text-white px-7 py-3 rounded-full text-[14px] font-medium hover:bg-[#0077ed] transition-all duration-300 hover:shadow-[0_4px_16px_rgba(0,113,227,0.25)] active:scale-[0.97]"
-            >
-              Learn more
-            </Link>
-            <Link
-              href="/products?model=iPhone+17+Pro+Max"
-              className="inline-flex items-center justify-center text-[#0071e3] px-7 py-3 rounded-full text-[14px] font-medium hover:bg-[#0071e3]/[0.06] transition-all duration-300 active:scale-[0.97]"
-            >
-              Buy &nbsp;&rarr;
-            </Link>
+          <motion.div variants={fadeUp} style={{ y: textY }} className="text-center mb-12 md:mb-16">
+            <p className="text-xs md:text-sm font-semibold uppercase tracking-[0.22em] text-[#86868B] mb-4">
+              Two flagships. One destination.
+            </p>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-[-0.045em] leading-[0.95] text-[#1d1d1f]">
+              Meet your next phone.
+            </h1>
           </motion.div>
 
-          {/* iPhone 17 image — original large card */}
-          <motion.div
-            variants={scaleIn}
-            className="w-full"
-          >
-            <div className="relative w-full max-w-4xl mx-auto rounded-3xl md:rounded-[2rem] overflow-hidden">
+          <div className="grid w-full grid-cols-1 gap-5 md:grid-cols-2 md:gap-6">
+            <motion.article
+              variants={scaleIn}
+              className="group relative min-h-[30rem] overflow-hidden rounded-[2rem] bg-[#e7e7eb] text-left shadow-[0_18px_50px_rgba(29,29,31,0.08)] md:min-h-[37rem]"
+            >
               <img
                 src="/Pics/IPhone 17.jpg"
                 alt="iPhone 17 Pro Max"
-                className="w-full h-auto object-cover aspect-[16/10] md:aspect-[16/9]"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
               />
-            </div>
-          </motion.div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/5 to-transparent" />
+              <div className="relative flex h-full min-h-[30rem] flex-col justify-end p-7 text-white md:min-h-[37rem] md:p-9">
+                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-white/70">Apple flagship</p>
+                <h2 className="text-3xl font-bold tracking-tight md:text-4xl">iPhone 17 Pro Max</h2>
+                <p className="mt-2 max-w-xs text-sm leading-relaxed text-white/80">The most powerful iPhone ever. Only at Apple Lounge.</p>
+                <Link
+                  href="/products?model=iPhone+17+Pro+Max"
+                  className="mt-6 inline-flex w-fit items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#1d1d1f] transition-all duration-300 hover:bg-white/90 hover:shadow-[0_6px_22px_rgba(255,255,255,0.25)] active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                >
+                  Explore iPhone <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+                </Link>
+              </div>
+            </motion.article>
+
+            <motion.article
+              variants={scaleIn}
+              className="group relative min-h-[30rem] overflow-hidden rounded-[2rem] bg-[#273641] text-left shadow-[0_18px_50px_rgba(39,54,65,0.16)] md:min-h-[37rem]"
+            >
+              <img
+                src="/Pics/s26.webp"
+                alt="Samsung Galaxy S26"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#17232b]/80 via-[#17232b]/10 to-transparent" />
+              <div className="relative flex h-full min-h-[30rem] flex-col justify-end p-7 text-white md:min-h-[37rem] md:p-9">
+                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-white/70">New from Samsung</p>
+                <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Galaxy S26</h2>
+                <p className="mt-2 max-w-xs text-sm leading-relaxed text-white/80">The latest Samsung Galaxy S26 has arrived.</p>
+                <Link
+                  href="/products?model=Samsung+Galaxy+S26"
+                  className="mt-6 inline-flex w-fit items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#1d1d1f] transition-all duration-300 hover:bg-white/90 hover:shadow-[0_6px_22px_rgba(255,255,255,0.25)] active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                >
+                  Explore Galaxy S26 <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+                </Link>
+              </div>
+            </motion.article>
+          </div>
         </motion.div>
       </motion.div>
 
