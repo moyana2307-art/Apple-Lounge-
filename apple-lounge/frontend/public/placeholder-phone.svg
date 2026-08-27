@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+  <rect width="300" height="300" fill="#F5F5F7"/>
+  <rect x="110" y="40" width="80" height="160" rx="12" fill="#D2D2D7"/>
+  <rect x="120" y="50" width="60" height="120" rx="4" fill="#E8E8ED"/>
+  <rect x="135" y="185" width="30" height="5" rx="2.5" fill="#C4C4C9"/>
+  <rect x="120" y="210" width="60" height="40" rx="4" fill="#D2D2D7"/>
+  <text x="150" y="280" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#86868B">Apple Lounge</text>
+</svg>
