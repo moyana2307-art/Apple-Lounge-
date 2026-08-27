@@ -1,0 +1,19 @@
+# Render blueprint — deploy the backend as a persistent Web Service.
+# Place this file at the repo root. Render will read it and start the service.
+# Secrets (DATABASE_URL from the linked Postgres, JWT_SECRET, FRONTEND_URL)
+# are injected by Render; do NOT commit real secrets.
+
+services:
+  - type: web
+    name: apple-lounge-backend
+    runtime: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DB_DRIVER
+        value: postgres
+      # DATABASE_URL is provided automatically when you link Render Postgres to this service.
