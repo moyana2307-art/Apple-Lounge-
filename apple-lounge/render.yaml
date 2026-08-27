@@ -7,7 +7,6 @@ services:
   - type: web
     name: apple-lounge-backend
     runtime: node
-    rootDir: backend
     buildCommand: npm install
     startCommand: npm start
     healthCheckPath: /api/health
