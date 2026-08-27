@@ -52,7 +52,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   const removeFromCart = useCallback((productId: number, color?: string) => {
     setItems(prev => prev.filter(i => {
-      if (i.product.id !== productId) return false;
+      if (i.product.id !== productId) return true;
       if (color) return i.color !== color;
       return false;
     }));

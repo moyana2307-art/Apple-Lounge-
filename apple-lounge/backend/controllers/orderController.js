@@ -1,4 +1,5 @@
 const pool = require('../config/db');
+const { sendOrderNotification } = require('../utils/email');
 
 const VALID_STATUSES = ['pending', 'processing', 'shipped', 'delivered', 'cancelled'];
 const VALID_PAYMENT_STATUSES = ['pending', 'paid', 'failed', 'refunded'];
@@ -21,6 +22,7 @@ exports.createOrder = async (req, res, next) => {
     }
 
     let totalAmount = 0;
+    const orderItems = [];
     for (const item of items) {
       const [products] = await connection.query('SELECT * FROM products WHERE id = ?', [item.product_id]);
       if (products.length === 0) {
@@ -32,6 +34,12 @@ exports.createOrder = async (req, res, next) => {
         return res.status(400).json({ success: false, message: `Insufficient stock for ${products[0].name}` });
       }
       totalAmount += products[0].price * item.quantity;
+      orderItems.push({
+        name: products[0].name,
+        quantity: item.quantity,
+        color: item.color,
+        price: products[0].price,
+      });
     }
 
     const [orderResult] = await connection.query(
@@ -55,6 +63,11 @@ exports.createOrder = async (req, res, next) => {
     }
 
     await connection.commit();
+
+    sendOrderNotification(
+      { id: orderId, customer_name, customer_email, customer_phone, delivery_method: delivery_method || 'pickup', delivery_address, order_notes, total_amount: totalAmount },
+      orderItems
+    ).catch((error) => console.error('Order email failed:', error.message));
 
     res.status(201).json({
       success: true,

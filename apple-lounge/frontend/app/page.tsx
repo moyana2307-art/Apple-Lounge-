@@ -1,5 +1,6 @@
 import Hero from '@/components/Hero';
 import FeaturedProducts from '@/components/FeaturedProducts';
+import SamsungSection from '@/components/SamsungSection';
 import ShopByModel from '@/components/ShopByModel';
 import AccessoriesSection from '@/components/AccessoriesSection';
 import BrandStatement from '@/components/BrandStatement';
@@ -12,6 +13,7 @@ export default function Home() {
     <>
       <Hero />
       <FeaturedProducts />
+      <SamsungSection />
       <ShopByModel />
       <AccessoriesSection />
       <BrandStatement />

@@ -18,6 +18,7 @@ CREATE TABLE IF NOT EXISTS products (
   model TEXT NOT NULL,
   storage TEXT,
   price REAL NOT NULL,
+  price_label TEXT,
   description TEXT,
   category TEXT DEFAULT 'iphones',
   image TEXT,

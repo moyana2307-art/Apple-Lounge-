@@ -4,6 +4,7 @@ import { generateWhatsAppUrl } from '@/lib/utils';
 const exploreLinks = [
   { href: '/', label: 'Home' },
   { href: '/products?category=iphones', label: 'iPhones' },
+  { href: '/products?category=samsung', label: 'Samsung Galaxy' },
   { href: '/products?category=accessories', label: 'Accessories' },
   { href: '/products?sort=price_asc', label: 'Deals' },
   { href: '/about', label: 'About' },

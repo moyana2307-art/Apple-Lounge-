@@ -35,4 +35,25 @@ INSERT INTO products (name, model, storage, price, description, category, image,
 ('iPhone 17 Clear Case', 'Case', 'N/A', 49.00, 'Designed by Apple for iPhone 17. Slim, clear design that shows off your iPhone while protecting it.', 'accessories', '/Pics/IPhone 17.jpg', 50, 0, 'Clear'),
 ('20W USB-C Power Adapter', 'Charger', 'N/A', 19.00, 'Apple 20W USB-C power adapter for fast and efficient charging of your iPhone.', 'accessories', '/Pics/adapter.webp', 100, 0, 'White'),
 ('USB-C to USB-C Cable (1m)', 'Cable', 'N/A', 15.00, 'Apple USB-C to USB-C charging cable. Durable woven design.', 'accessories', '/Pics/usb cable.webp', 80, 0, 'White'),
-('2TB iCloud Storage', 'iCloud', '2TB', 9.99, 'iCloud+ with 2TB storage. Securely store all your photos, files, and more.', 'accessories', '/Pics/adapter.webp', 999, 0, 'N/A');
+('2TB iCloud Storage', 'iCloud', '2TB', 9.99, 'iCloud+ with 2TB storage. Securely store all your photos, files, and more.', 'accessories', '/Pics/2tb icloud storage.jpg', 999, 0, 'N/A');
+
+INSERT INTO products (name, model, storage, price, price_label, description, category, image, stock, featured, colors) VALUES
+('Tempered Glass', 'Tempered Glass', 'N/A', 5.00, 'From $5', 'Scratch-resistant screen protection for your device. From $5 - $15.', 'accessories', '/Pics/tempered glass.webp', 25, 0, 'Clear'),
+('Camera Lens Protector', 'Camera Lens Protector', 'N/A', 10.00, NULL, 'Protective coverage for your phone camera lenses.', 'accessories', '/Pics/camera lens .webp', 25, 0, 'Clear'),
+('Fast Charger', 'Fast Charger', 'N/A', 15.00, NULL, 'Fast, reliable charging for compatible devices.', 'accessories', '/Pics/fast charger .webp', 25, 0, 'White'),
+('Samsung Cases', 'Samsung Cases', 'N/A', 5.00, 'From $5', 'Protective cases designed for Samsung Galaxy devices. From $5 - $10.', 'accessories', '/Pics/samsung cases.webp', 25, 0, 'Black,White'),
+('iPhone Cases', 'iPhone Cases', 'N/A', 5.00, 'From $5', 'Slim protective cases for iPhone models. From $5 - $10.', 'accessories', '/Pics/iphone case.webp', 25, 0, 'Black,White'),
+('Headphones', 'Headphones', 'N/A', 25.00, NULL, 'Comfortable headphones for immersive everyday listening.', 'accessories', '/Pics/headphones.webp', 25, 0, 'Black,White');
+
+INSERT INTO products (name, model, storage, price, description, category, image, stock, featured, colors) VALUES
+('Samsung Galaxy S21 Ultra', 'Samsung Galaxy S21 Ultra', 'N/A', 300.00, 'A premium Galaxy flagship with a versatile camera system, vivid display, and powerful everyday performance.', 'samsung', '/Pics/S21 Ultra.webp', 10, 0, 'Black,Silver'),
+('Samsung Galaxy S22', 'Samsung Galaxy S22', 'N/A', 340.00, 'A compact Galaxy flagship with a bright display, capable camera system, and smooth performance.', 'samsung', '/Pics/s22.webp', 10, 0, 'Black,White,Green'),
+('Samsung Galaxy S22 Ultra', 'Samsung Galaxy S22 Ultra', 'N/A', 390.00, 'Galaxy Note-inspired flagship power with an integrated S Pen and an advanced camera experience.', 'samsung', '/Pics/s22 Ultra.webp', 10, 0, 'Black,White,Green'),
+('Samsung Galaxy S23', 'Samsung Galaxy S23', 'N/A', 450.00, 'A refined Galaxy flagship with fast performance, a crisp display, and a dependable camera system.', 'samsung', '/Pics/s23.webp', 10, 0, 'Black,White,Green'),
+('Samsung Galaxy S23 Ultra', 'Samsung Galaxy S23 Ultra', 'N/A', 549.00, 'Ultra-level Galaxy performance with an S Pen, high-resolution camera, and expansive display.', 'samsung', '/Pics/s23 ultra.jpg', 10, 0, 'Black,White,Green'),
+('Samsung Galaxy S24', 'Samsung Galaxy S24', 'N/A', 620.00, 'A modern Galaxy flagship with intelligent features, a bright display, and all-day capability.', 'samsung', '/Pics/s24.webp', 10, 0, 'Black,Silver,Blue'),
+('Samsung Galaxy S24 Ultra', 'Samsung Galaxy S24 Ultra', 'N/A', 699.00, 'Titanium-finished Galaxy Ultra performance with an S Pen and a pro-grade camera system.', 'samsung', '/Pics/s24 ultra.webp', 10, 0, 'Black,Silver,Blue'),
+('Samsung Galaxy S25', 'Samsung Galaxy S25', 'N/A', 720.00, 'The next-generation Galaxy flagship, designed for fast performance and intelligent everyday use.', 'samsung', '/Pics/s25.webp', 10, 0, 'Black,Silver,Blue'),
+('Samsung Galaxy S25 Ultra', 'Samsung Galaxy S25 Ultra', 'N/A', 899.00, 'A premium Galaxy Ultra with exceptional performance, a versatile camera, and a spacious display.', 'samsung', '/Pics/s25 ultra.webp', 10, 0, 'Black,Silver,Blue'),
+('Samsung Galaxy S26', 'Samsung Galaxy S26', 'N/A', 950.00, 'The latest Galaxy flagship with advanced performance, a polished design, and a vivid display.', 'samsung', '/Pics/s26.webp', 10, 0, 'Black,Silver,Blue'),
+('Samsung Galaxy S26 Ultra', 'Samsung Galaxy S26 Ultra', 'N/A', 1299.00, 'The ultimate Galaxy experience with flagship performance, pro-grade imaging, and an immersive display.', 'samsung', '/Pics/s26 ultra.webp', 10, 0, 'Black,Silver,Blue');

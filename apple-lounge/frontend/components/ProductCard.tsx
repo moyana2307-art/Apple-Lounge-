@@ -133,7 +133,7 @@ export default function ProductCard({ product, compact = false }: ProductCardPro
                   compact ? 'text-base' : 'text-lg'
                 }`}
               >
-                {formatPrice(product.price)}
+                {product.price_label || formatPrice(product.price)}
               </span>
               <span
                 className={`inline-flex items-center rounded-full px-2 py-px text-[10px] font-medium leading-5 ${stockColor}`}

@@ -2,7 +2,7 @@ const pool = require('../config/db');
 
 exports.getProducts = async (req, res, next) => {
   try {
-    const { model, category, featured, minPrice, maxPrice, storage, sort, search, page = 1, limit = 50 } = req.query;
+    const { model, category, featured, minPrice, maxPrice, storage, sort, search, page = 1, limit = 100 } = req.query;
 
     let query = 'SELECT * FROM products WHERE 1=1';
     const params = [];
@@ -117,11 +117,11 @@ exports.getModels = async (req, res, next) => {
 
 exports.createProduct = async (req, res, next) => {
   try {
-    const { name, model, storage, price, description, category, image, stock, featured, colors } = req.body;
+    const { name, model, storage, price, price_label, description, category, image, stock, featured, colors } = req.body;
 
     const [result] = await pool.query(
-      'INSERT INTO products (name, model, storage, price, description, category, image, stock, featured, colors) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
-      [name, model, storage, price, description, category || 'iphones', image || null, stock || 0, featured || false, colors || 'Black,Silver']
+      'INSERT INTO products (name, model, storage, price, price_label, description, category, image, stock, featured, colors) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+      [name, model, storage, price, price_label || null, description, category || 'iphones', image || null, stock || 0, featured || false, colors || 'Black,Silver']
     );
 
     const [newProduct] = await pool.query('SELECT * FROM products WHERE id = ?', [result.insertId]);
@@ -134,7 +134,7 @@ exports.createProduct = async (req, res, next) => {
 
 exports.updateProduct = async (req, res, next) => {
   try {
-    const { name, model, storage, price, description, category, image, stock, featured, colors } = req.body;
+    const { name, model, storage, price, price_label, description, category, image, stock, featured, colors } = req.body;
 
     const [existing] = await pool.query('SELECT * FROM products WHERE id = ?', [req.params.id]);
     if (existing.length === 0) {
@@ -142,12 +142,13 @@ exports.updateProduct = async (req, res, next) => {
     }
 
     await pool.query(
-      'UPDATE products SET name=?, model=?, storage=?, price=?, description=?, category=?, image=?, stock=?, featured=?, colors=? WHERE id=?',
+      'UPDATE products SET name=?, model=?, storage=?, price=?, price_label=?, description=?, category=?, image=?, stock=?, featured=?, colors=? WHERE id=?',
       [
         name || existing[0].name,
         model || existing[0].model,
         storage !== undefined ? storage : existing[0].storage,
         price || existing[0].price,
+        price_label !== undefined ? price_label : existing[0].price_label,
         description !== undefined ? description : existing[0].description,
         category || existing[0].category,
         image !== undefined ? image : existing[0].image,

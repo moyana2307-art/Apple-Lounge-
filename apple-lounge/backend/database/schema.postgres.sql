@@ -20,6 +20,7 @@ CREATE TABLE IF NOT EXISTS products (
   model TEXT NOT NULL,
   storage TEXT,
   price NUMERIC(10,2) NOT NULL,
+  price_label TEXT,
   description TEXT,
   category TEXT NOT NULL DEFAULT 'iphones',
   image TEXT,

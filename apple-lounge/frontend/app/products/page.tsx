@@ -12,6 +12,7 @@ import ProductCard from '@/components/ProductCard';
 const categories = [
   { label: 'All', value: 'All' },
   { label: 'iPhone', value: 'iphones' },
+  { label: 'Samsung Galaxy', value: 'samsung' },
   { label: 'iPad', value: 'ipads' },
   { label: 'Mac', value: 'mac' },
   { label: 'Apple Watch', value: 'apple-watch' },
@@ -55,6 +56,7 @@ export default function ProductsPage() {
   const sort = searchParams.get('sort') || 'newest';
   const model = searchParams.get('model') || '';
   const featured = searchParams.get('featured') || '';
+  const categoryLabel = category === 'All' ? 'All iPhones' : category === 'samsung' ? 'Samsung Galaxy' : category === 'iphones' ? 'All iPhones' : category;
 
   const updateParam = useCallback((key: string, value: string) => {
     const params = new URLSearchParams(searchParams.toString());
@@ -184,7 +186,7 @@ export default function ProductsPage() {
           className="mb-12"
         >
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-apple-dark tracking-tight">
-            {category === 'All' ? 'All iPhones' : category}
+            {categoryLabel}
           </h1>
           {!loading && (
             <p className="text-lg text-apple-gray mt-4">
